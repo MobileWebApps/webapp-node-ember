@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="styles/themes/theme_iphone_black/icons.css">
+<link rel="stylesheet" href="styles/themes/theme_iphone_black/navigation-app.css">
+<link rel="stylesheet" href="styles/themes/theme_iphone_black/listing-view.css">
+
+
+<nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+	{{outlet header}}
+	{{outlet navbar}}
+</nav>
+
+<div id="main" class="container">
+	<div class="row-fluid wrap">
+		{{outlet sidemenu}}
+		<section class="well span12" id="body-container">
+			{{outlet}}
+		</section>
+	</div>
+</div>
+
+{{outlet footer}}
+

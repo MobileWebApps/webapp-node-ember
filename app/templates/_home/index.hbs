@@ -1,0 +1,43 @@
+<div class="list-view">
+	<div class="row listing-view-container">
+	
+	{{view Ember.TextField id="search-app" 
+		placeholder="Search App..."
+       	valueBinding="appSearchBox" action="searchApp"}}
+       
+		<div class="listing-view">
+			<li class="list-group">
+				<span>Installed Apps</span>
+			</li>
+			<ul data-id="1" class="list-items-view nav nav-list">
+				{{#each app in apps}}
+				<li>
+					{{#if app.visible}}
+						{{#linkTo apps.go app}}
+						<span class="box-icon"></span><i data-icon="" class="icon arrow"></i> {{app.name}}
+						{{/linkTo}}
+					{{/if}}
+				</li>
+				{{/each}}
+			</ul>
+
+			<ul data-id="2" class="list-group-items-view nav nav-list hide">
+				<li class="list-group">
+					<span>Hidden nav-list</span>
+				</li>
+
+				{{#each app in apps.name}}
+				<li>
+					{{#if app.visible}}
+						{{#linkTo apps.go app}}
+						<i data-icon="" class="icon arrow"></i>  {{app.name}}
+						{{/linkTo}}
+					{{/if}}
+				</li>
+				{{/each}}
+
+			</ul>
+
+		</div>
+	</div>
+</div>

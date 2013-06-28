@@ -12,6 +12,7 @@ $ bower update <dep> - update a dependency to the latest version available
 ## Intro
 
 Built with: Yeoman generator-ember
+https://github.com/yeoman/generator-ember
 
 See http://arvelocity.com/2013/05/04/running-an-express-server-with-grunt-and-yeoman-part-1/
 

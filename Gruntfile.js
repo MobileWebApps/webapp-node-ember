@@ -20,6 +20,7 @@ module.exports = function (grunt) {
         app: 'app',
         dist: 'dist'
     };
+	grunt.option('stack', true);
 
     grunt.initConfig({
         yeoman: yeomanConfig,
@@ -192,7 +193,8 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: '<%= yeoman.app %>/index.html',
+            html: ['<%= yeoman.app %>/index.html',
+                   '<%= yeoman.app %>/index.html'],
             options: {
                 dest: '<%= yeoman.dist %>'
             }
@@ -319,6 +321,9 @@ module.exports = function (grunt) {
 
     grunt.renameTask('regarde', 'watch');
 
+/**
+ * SERVER TASK
+ */
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -327,7 +332,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'concurrent:server',
-            'neuter:app',
+            'neuter:app',			//Concatenate files in the "require" order 
             'livereload-start',
             'connect:livereload',
             'open',
@@ -335,6 +340,9 @@ module.exports = function (grunt) {
         ]);
     });
 
+/**
+ * TEST TASK
+ */
     grunt.registerTask('test', [
         'clean:server',
         'concurrent:test',
@@ -343,19 +351,30 @@ module.exports = function (grunt) {
         'mocha'
     ]);
 
+/**
+ * BUILD TASK
+ * 
+ * Usually, useminPrepare is launched first, then the 
+ * concat, uglify, cssmin and requirejs tasks are launched 
+ * (they will create the minified/revved version of the referenced files),
+ * and then, in the end usemin is launched.
+ */
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
-        'neuter:app',
+        'neuter:app',		//Concatenate files in the "require" order 
         'concat',
         'cssmin',
         'uglify',
         'copy',
-        'rev',
-        'usemin'
+        'rev',				//Static file asset revisioning through content hashing (https://github.com/cbas/grunt-rev)
+        'usemin'			//Replaces references to non-optimized scripts or stylesheets into a set of HTML files (or any templates/views)
     ]);
 
+/**
+ * DEFAULT TASK
+ */
     grunt.registerTask('default', [
         'jshint',
         'test',
