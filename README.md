@@ -1,3 +1,78 @@
+PROJECT DESCRIPTION
+====================================
+Base project structure to build modular web apps with mobile, theming and app store support.
+
+Cool features: 
+	- Development web server with file watcher to auto-detect changes and auto-refresh the browser.
+	- Ready to use project structure and development / build workflows
+	- Optmized builds for production (see below)
+	- Support for multiple apps and themes
+	- Support for mobile development 
+
+It can be used as a responsive webapp or a mobile app via Phonegap.
+
+You can check the Mobile versions of this project on.
+
+https://build.phonegap.com/apps/396322/share
+
+The app can be deployed to IOS, Android, Windows Phone, Symbian and WebOS devices.
+	
+
+Technology: 
+	Development Language		:	JavaScript		- the language of the web
+	Front End Framework			:	Twitter Bootstrap - Sleek, intuitive, and powerful front-end framework for faster and easier web development
+	Web Framework				:	Ember.js		- a framework for creating ambitious web applications
+	Data Persistency			:	Ember-Data		- a data persistence library for Ember.js
+	Templating:					:	Handlebars.js	- minimal Templating on Steroids
+	CSS Stylesheets				:	Sass			- syntactically awesome stylesheets
+	HTML manipulation and Ajax	:	jQuery			- makes HTML manipulation, event handling, animation, and Ajax much simpler with an easy-to-use
+	Mobile Framework			:	Phonegap		- easily create mobile apps using the web technologies you know and love: HTML, CSS, and JavaScript
+	Mobile Packaging			:	Phonegap Build	- Package mobile apps in the cloud
+
+	Server Side Platform		:	Node.js			- a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+	Web Server:					:	Connect			- high quality middleware for node.js
+	Build Tool					: 	Grunt			- in one word: automation. After you've configured it, a task runner can do most of that mundane work for you—and your team—with basically zero effort
+	Package Manager				: 	Bower			- a package manager for the web, created at Twitter
+	Dependency Manager:			: 	Require/Neuter	- concatenate files in the "require" order
+	Cache Optimization		 	:	grunt-rev		- static file asset revisioning through content hashing
+	HTML and CSS Optimization	:	grunt-usemin	- replaces references to non-optimized scripts or stylesheets into a set of HTML files
+	JavaScript Compressor		:	UglifyJS		- a fast new JavaScript compressor for Node.js that’s on par with Closure
+	CSS Compressor 				:	cssmin 			- a (simple) css minifier with benefits 
+	Lint						:	JSHint			- JSHint is a tool to detect errors and potential problems in JavaScript code and can be used to enforce coding conventions
+	Testing Framework			:	Mocha			- the fun, simple, flexible JavaScript test framework
+	Project Scaffolding			: 	Yeoman / ember-generator
+
+Quick Start
+-------
+
+Have a look at:
+	/app/scripts/app.js			: main script
+	/app/scripts/app-config.js	: configuration and context settings
+	/templates					: apps and themes
+
+## Requirements
+
+You will need to have Node.js and Grunt installed
+
+	# Download and install node.js at http://nodejs.org
+	
+	# Use node.js npm package installer to install Grunt CLI
+	$ npm install -g grunt-cli
+	
+	# Go to the webapp-node-ember directory and use npm and bower to install all dependencies
+    $ npm install
+    $ bower install
+
+## Running the webapp
+	# Use Grunt to run the webapp inside a connect preview server (automatically opens your browser)
+    $ grunt server
+
+	# Now go and change some code to see the changes automatically apearing in your browser... 
+		 
+## Building and optmizing your webapp for production
+	# Use Grunt to to build your webapp into the /dist folder 
+    $ grunt build
+
 ## Useful commands
 
 $ grunt - build for production
@@ -9,54 +84,3 @@ $ bower list - list out the dependencies you have installed for a project
 $ bower install <dep>..<depN> - install dependencies
 $ bower update <dep> - update a dependency to the latest version available
  
-## Intro
-
-Built with: Yeoman generator-ember
-https://github.com/yeoman/generator-ember
-
-See http://arvelocity.com/2013/05/04/running-an-express-server-with-grunt-and-yeoman-part-1/
-
-These files are meant to help you quickly get up and running using Grunt with Express, with livereload and automatic app server reboots for rapid development. Client-side libraries are retrieved with `bower`.
-
-Popular client-side libraries included and configured:
-
-* Modernizr
-* jQuery
-* Backbone
-* Lo-dash
-* RequireJS
-* Handlebars
-* JSON2.js
-* SASS with Compass
-
-Server-side libraries included and configured:
-
-* Express
-* Jade
-* node-inspector
-
-Grunt plugins I included in `package.json` and configured in `Gruntfile.js` are:
-
-* grunt-nodemon (~0.0.2)
-* grunt-contrib-handlebars - for precompiled client-side templates
-* grunt-concurrent (~0.2.0 !important)
-* grunt-contrib-watch (~0.4.3 !important)
-
-## Yeoman strong
-
-This scaffold is based off of the default Yeoman scaffold, started with
-
-`$ yo webapp`
-
-I've built on it from that initial state. You'll notice that Twitter Bootstrap files were removed and Mocha unit tests were left unchanged from the initial `webapp` scaffold. It's intended that you set those up if and however you like, as many configurations are possible, especially with RequireJS. You're encouraged to check out [phawk's Backbone Stack](https://github.com/phawk/Backbone-Stack) for one example. My testing setup is very different from his. I'm also using [Testem](https://github.com/airportyh/testem) as a test harness in my project setup, and not `grunt test` as in the Gruntfile.
-
-## "But how do I use this? Why did you make this?"
-
-This and more in the [companion blog post](http://arvelocity.com/2013/05/30/running-an-express-server-with-grunt-and-yeoman-part-2/) to this repository.
-
-### Special Notes:
-
-If you want to `grunt build` for production with Handlebars in your project, you'll need to change the Handlebars runtime library code from the initial `var Handlebars = {};` to `this.Handlebars = {};` so that it'll be attached to the `window` object and found by RequireJS modules. It seems this is being fixed upstream with the Handlebars developers at the time of this writing.
-
-
-http://thesassway.com/beginner/how-to-structure-a-sass-project

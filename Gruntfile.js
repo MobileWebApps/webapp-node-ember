@@ -333,7 +333,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'neuter:app',			//Concatenate files in the "require" order 
             'livereload-start',
-            'connect:livereload',
+            'connect:livereload',	//High quality middleware for node.js
             'open',
             'watch'
         ]);
@@ -347,7 +347,7 @@ module.exports = function (grunt) {
         'concurrent:test',
         'neuter:app',
         'connect:test',
-        'mocha'
+        'mocha'				//The fun, simple, flexible JavaScript test framework
     ]);
 
 /**
@@ -364,8 +364,8 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'neuter:app',		//Concatenate files in the "require" order 
         'concat',
-        'cssmin',
-        'uglify',
+        'cssmin',			//A (simple) css minifier with benefits
+        'uglify',			//A fast new JavaScript compressor for Node.js that’s on par with Closure
         'copy',
         'rev',				//Static file asset revisioning through content hashing (https://github.com/cbas/grunt-rev)
         'usemin'			//Replaces references to non-optimized scripts or stylesheets into a set of HTML files (or any templates/views)
@@ -375,7 +375,7 @@ module.exports = function (grunt) {
  * DEFAULT TASK
  */
     grunt.registerTask('default', [
-        'jshint',
+        'jshint',			//JSHint is a tool to detect errors and potential problems in JavaScript code and can be used to enforce coding conventions
         'test',
         'build'
     ]);

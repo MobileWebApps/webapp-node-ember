@@ -26,7 +26,7 @@ App.APPS = [ App.Apps.home, App.Apps.hp12c, App.Apps.help ];
 /**
  * Router Map
  *  - defines routes required by Apps and Themes
- */
+ */git 
 App.Router.map(function() {
 	this.resource("apps", function() {
 		this.route("go", {
