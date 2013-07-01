@@ -57,3 +57,6 @@ This and more in the [companion blog post](http://arvelocity.com/2013/05/30/runn
 ### Special Notes:
 
 If you want to `grunt build` for production with Handlebars in your project, you'll need to change the Handlebars runtime library code from the initial `var Handlebars = {};` to `this.Handlebars = {};` so that it'll be attached to the `window` object and found by RequireJS modules. It seems this is being fixed upstream with the Handlebars developers at the time of this writing.
+
+
+http://thesassway.com/beginner/how-to-structure-a-sass-project

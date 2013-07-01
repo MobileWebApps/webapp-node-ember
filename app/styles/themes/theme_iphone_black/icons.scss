@@ -1,13 +1,15 @@
+@import "../../partials/base";
+
 @charset "UTF-8";
 
 @font-face {
     font-family: 'entypo';
-    src: url('../../fonts/entypo.eot');
-    src: url('../../fonts/entypo.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/entypo.woff') format('woff'),
-         url('../../fonts/entypo.ttf') format('truetype'),
-		 url('../../fonts/entypo.otf') format('opentype'),
-         url('../../fonts/entypo.svg#entypo') format('svg');
+    src: url('#{$stylesPath}/fonts/entypo.eot');
+    src: url('#{$stylesPath}/fonts/entypo.eot?#iefix') format('embedded-opentype'),
+         url('#{$stylesPath}/fonts/entypo.woff') format('woff'),
+         url('#{$stylesPath}/fonts/entypo.ttf') format('truetype'),
+		 url('#{$stylesPath}/fonts/entypo.otf') format('opentype'),
+         url('#{$stylesPath}/fonts/entypo.svg#entypo') format('svg');
     font-weight: normal;
     font-style: normal;
 }

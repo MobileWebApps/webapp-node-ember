@@ -1,19 +1,22 @@
-// Configure Ember
+/**
+ * Configure Ember Environment
+ */
 ENV = typeof ENV !== 'undefined' ? ENV : {
-  CP_DEFAULT_CACHEABLE: true,
-  VIEW_PRESERVES_CONTEXT: true
+	CP_DEFAULT_CACHEABLE : true,
+	VIEW_PRESERVES_CONTEXT : true
 };
 
-
-//Creates Ember
+/**
+ * Instantiates Ember
+ */
 var App = window.App = Ember.Application.create({
-	  LOG_TRANSITIONS: true
-	});
+	LOG_TRANSITIONS : true
+});
 
-//Creates Ember Data
+/**
+ * Instantiates Ember Data
+ */
 App.Store = DS.Store.extend({
-	  revision: 13,
-	  adapter: 'DS.FixtureAdapter'
-	});
-
-require('scripts/platform/model/*');
+	revision : 13,
+	adapter : 'DS.FixtureAdapter'
+});

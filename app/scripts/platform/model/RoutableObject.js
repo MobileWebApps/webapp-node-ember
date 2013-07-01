@@ -4,7 +4,7 @@ App.RoutableObject = Ember.Object.extend({
 	id : null,
 	name : 'unnamed',
 	visible : true,
-
+	
 	location : function() {
 		return App.Context.Apps_location + this.get('id');
 	}.property('id'),

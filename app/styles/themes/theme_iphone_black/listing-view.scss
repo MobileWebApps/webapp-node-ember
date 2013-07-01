@@ -1,3 +1,5 @@
+@import "../../partials/base";
+
 .listing-view .nav-list {
   padding-right: 0;
   padding-left: 10px;
@@ -48,7 +50,7 @@
 }
 li.list-group {
   background-color: transparent;
-  background-image: url("../../../images/themes/theme_iphone_black//list-group-header.png");
+  background-image: url("#{$imagesPath}/themes/theme_iphone_black/list-group-header.png");
   background-position: 0 0;
   background-repeat: repeat-x;
   background-size: 320px 24px;
@@ -115,7 +117,7 @@ li.list-group {
 }
 li.list-group {
   background-color: transparent;
-  background-image: url("../../../images/themes/theme_iphone_black//list-group-header.png");
+  background-image: url("#{$imagesPath}/themes/theme_iphone_black/list-group-header.png");
   background-position: 0 0;
   background-repeat: repeat-x;
   background-size: 320px 24px;

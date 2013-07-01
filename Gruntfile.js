@@ -193,15 +193,13 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: ['<%= yeoman.app %>/index.html',
-                   '<%= yeoman.app %>/templates/**/*.hbs'],
+            html: ['<%= yeoman.app %>/index.html'],
             options: {
                 dest: '<%= yeoman.dist %>'
             }
         },
         usemin: {
-            html: ['<%= yeoman.dist %>/**/*.html',
-                   '<%= yeoman.app %>/templates/**/*.hbs'],
+            html: ['<%= yeoman.dist %>/**/*.html'],
             css: ['<%= yeoman.dist %>/styles/**/*.css'],
             options: {
                 dirs: ['<%= yeoman.dist %>']
