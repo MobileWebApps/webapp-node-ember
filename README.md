@@ -66,9 +66,9 @@ Quick Start
 ------------
 
 Have a look at:
-	/app/scripts/app.js			: main script
-	/app/scripts/app-config.js	: configuration and context settings
-	/templates					: apps and themes
+- [app/scripts/app.js](app/scripts/app.js)			: main script
+- [app/scripts/app-config.js](app/scripts/app-config.js)	: configuration and context settings
+- [app/templates](app/templates)				: apps and themes
 
 #### Requirements
 
