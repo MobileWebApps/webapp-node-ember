@@ -18,7 +18,7 @@ https://build.phonegap.com/apps/396322/share
 >The app can be deployed to IOS, Android, Windows Phone, Symbian and WebOS devices.
 	
 
-#### Technology:
+#### Technology Used:
 ----------
 ###### Language Platform
 - [JavaScript] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview) - 
@@ -37,6 +37,8 @@ https://build.phonegap.com/apps/396322/share
   minimal Templating on Steroids
 - [Twitter Bootstrap](http://twitter.github.io/bootstrap) - 
   Sleek, intuitive, and powerful front-end framework for faster and easier web development     
+- [Font Awesome](http://twitter.github.io/bootstrap) - 
+  Font Awesome gives you scalable vector icons that can instantly be customized
 - [Sass](http://sass-lang.com)	- 
   syntactically awesome stylesheets
 - [jQuery](http://jquery.com) - 
