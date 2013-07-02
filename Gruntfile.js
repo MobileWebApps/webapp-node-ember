@@ -1,4 +1,3 @@
-// Generated on 2013-06-23 using generator-ember 0.3.1
 'use strict';
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
