@@ -1,7 +1,7 @@
 /**
  * Creates theme object
  */
-App.Themes.iphoneBlack = App.App.create({
+App.themes.iphoneBlack = App.App.create({
 	id : 'iphoneBlack',
 	name : 'Iphone Black',
 });
@@ -9,7 +9,7 @@ App.Themes.iphoneBlack = App.App.create({
 /**
  * Apply theme effects to screen items
  */
-App.Themes.iphoneBlack.afterRender = function() {
+App.themes.iphoneBlack.afterRender = function() {
 	$(document).ready(
 			function() {
 				// header
@@ -92,7 +92,7 @@ App.Themes.iphoneBlack.afterRender = function() {
 /**
  * Render Theme Templates
  */
-App.Themes.iphoneBlack.renderTemplate = function() {
+App.themes.iphoneBlack.renderTemplate = function() {
 	// Render default outlet
 	this.render('theme_iphone_black/layout');
 
@@ -111,6 +111,6 @@ App.Themes.iphoneBlack.renderTemplate = function() {
 	});
 
 	Ember.run.scheduleOnce('afterRender', this, function() {
-		App.Themes.iphoneBlack.afterRender();
+		App.themes.iphoneBlack.afterRender();
 	});
 };

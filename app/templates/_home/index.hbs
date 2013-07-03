@@ -12,7 +12,7 @@
 			<ul data-id="1" class="list-items-view nav nav-list">
 				{{#each app in apps}}
 				<li>
-					{{#if app.visible}}
+					{{#if app.listInHomeApp}}
 						{{#linkTo apps.go app}}
 						<span class="box-icon"></span><i data-icon="" class="icon arrow"></i> {{app.name}}
 						{{/linkTo}}
@@ -28,7 +28,7 @@
 
 				{{#each app in apps.name}}
 				<li>
-					{{#if app.visible}}
+					{{#if app.listInHomeApp}}
 						{{#linkTo apps.go app}}
 						<i data-icon="" class="icon arrow"></i>  {{app.name}}
 						{{/linkTo}}

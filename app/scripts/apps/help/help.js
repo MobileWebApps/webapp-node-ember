@@ -1,5 +1,7 @@
 //App Config
-App.Apps.help = App.App.create({
+App.apps.help = App.App.create({
 	id : 'help',
 	name : 'Help',
 });
+
+App.apps.help.register();

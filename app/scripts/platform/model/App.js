@@ -1,3 +1,10 @@
 require('scripts/platform/model/RoutableObject');
 
-App.App = App.RoutableObject.extend({});
+App.apps = {};
+App.appsById = [];
+
+App.App = App.RoutableObject.extend({
+	register: function() {
+		App.appsById[this.id] = this;
+	}
+});

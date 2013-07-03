@@ -1,15 +1,18 @@
-App.Context = {};
-App.Context.appName = "Mobile App";
-App.Context.themes_location = "templates/themes/";
-App.Context.Apps_location = "templates/apps/";
+App.context = Ember.Object.extend({ 
+	appName: "Mobile App",
+	themes_location: "templates/themes/",
+	Apps_location: "templates/apps/",
+	showNavbar : false,
+	showFooter : false,
+	default_app : {},
+	default_theme : {},
+	current_app : {},
+	current_theme : {}
 
-App.Apps = {};
-App.Themes = {};
-App.APPS = []; //Remove
-App.Context.Apps = {};
+});
 
-
-App.Context.default_app = {};
-App.Context.default_theme = {};
-App.Context.current_app = {};
-App.Context.current_theme = {};
+App.context.setCurrentApp = function(app) {
+	App.context.current_app = app;
+	App.context.showNavbar = app.showNavbar;
+	App.context.showFooter = app.showFooter;
+}

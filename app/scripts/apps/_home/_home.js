@@ -1,19 +1,18 @@
 //App Config
-App.Apps.home = App.App.create({
+App.apps.home = App.App.create({
 	id : '_home',
 	name : 'Home',
-	visible : false,
+	listInHomeApp : false,
+	showNavbar : false
 });
-
-App.Context.Apps[App.Apps.home.id] = App.Apps.home;
-
+App.apps.home.register();
 
 // Home Route
 App.HomeIndexRoute = Ember.Route.extend({
 	setupController : function(controller) {
-		// Set the IndexController's `title`
+		var appList = App.hlp.array.getMapValues(App.appsById)
 		controller.set('title', "My App");
-		controller.set('apps', App.APPS);
+		controller.set('apps', appList);
 	}
 });
 

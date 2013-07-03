@@ -1,8 +1,10 @@
 
-<nav id="header" class="navbar navbar-inverse navbar-fixed-top">
-	{{outlet header}}
-	{{outlet navbar}}
-</nav>
+	<nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+		{{outlet header}}
+		{{#if context.showNavbar}}
+			{{outlet navbar}}
+		{{/if}}
+	</nav>
 
 <div id="main" class="container">
 	<div class="row-fluid wrap">
@@ -13,5 +15,7 @@
 	</div>
 </div>
 
-{{outlet footer}}
+{{#if context.showFooter}}
+	{{outlet footer}}
+{{/if}}
 

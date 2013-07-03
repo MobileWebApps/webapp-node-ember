@@ -1,7 +1,7 @@
 require('scripts/apps/hp12c/hp12c');
 
 "use strict";
-var H = App.Apps.hp12c.calculator = {};
+var H = App.apps.hp12c.calculator = {};
 H.type = "12c";
 H.touch_display = false;
 H.disp_theo_width = 700;

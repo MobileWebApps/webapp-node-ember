@@ -2,21 +2,42 @@ require('scripts/platform/*');
 require('scripts/platform/model/*');
 
 /**
- * Creates a namespace for components
- */
-App.components = {};
-
-/**
  * Setup apps, themes and application context
  */
 require('scripts/app-config'); 
+
+/**
+ * Router Map
+ *  - defines routes required by Apps and Themes
+ */
+App.Router.map(function() {
+	this.resource("apps", function() {
+		this.route("go", {
+			path : "/:app_id"
+		});
+	});
+	
+	// Creates a resource for each App.id and map routes
+	// according to the App.routerMapResource() function
+	mapper = this;
+	Object.keys(App.appsById).map(function(id) {
+		mapper.resource(id, App.appsById[id].routerMapResource);
+	});
+	
+});
+
+
 
 /**
  * Application wide route
  *  - renders themes and application layout
  */
 App.ApplicationRoute = Ember.Route.extend({
-	renderTemplate : App.Context.current_theme.renderTemplate
+	setupController : function(controller) {
+		controller.set('context', App.context);
+	},
+	
+	renderTemplate : App.context.current_theme.renderTemplate
 });
 
 
@@ -26,7 +47,7 @@ App.ApplicationRoute = Ember.Route.extend({
  */
 App.IndexRoute = Ember.Route.extend({
 	redirect : function(app) {
-		this.transitionTo(App.Context.current_app.get('route'));
+		this.transitionTo(App.context.current_app.get('route'));
 	}
 });
 
@@ -35,15 +56,15 @@ App.IndexRoute = Ember.Route.extend({
  * App redirector route
  *  - selects an app and redirects to its route
  */
-App.AppsGoRoute = Ember.Route.extend({
+App.appsGoRoute = Ember.Route.extend({
 	model : function(params) {
-		App.Context.current_app = App.Context.Apps[params.app_id];
-		return App.Context.current_app;
+		App.context.setCurrentApp(App.appsById[params.app_id]);
+		return App.context.current_app;
 	},
 
 	redirect : function(app) {
-		App.Context.current_app = app;
-		this.transitionTo(App.Context.current_app.get('route'));
+		App.context.setCurrentApp(app);
+		this.transitionTo(App.context.current_app.get('route'));
 	}
 });
 
