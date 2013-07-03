@@ -1,17 +1,16 @@
-require('scripts/platform/*');
-require('scripts/platform/model/*');
+//Log Device Browser
+console.debug('Browser:',navigator.userAgent);
+
+//Load Components
+require('scripts/platform/**/*');
+require('scripts/components/**/*');
+require('scripts/themes/**/*');
+require('scripts/apps/**/*');
+
 
 // Load Application Wide UI Effects
 require('scripts/app-effects');
 
-// Load Themes
-require('scripts/themes/theme_iphone_black/*');
-
-
-// Load Apps
-require('scripts/apps/_home/*');
-require('scripts/apps/help/*');
-require('scripts/apps/hp12c/*');
 
 // Configure Context
 App.Context.default_app = App.Apps.home;
@@ -20,7 +19,10 @@ App.Context.current_app = App.Context.default_app;
 App.Context.default_theme = App.Themes.iphoneBlack;
 App.Context.current_theme = App.Context.default_theme;
 
-App.APPS = [ App.Apps.home, App.Apps.hp12c, App.Apps.help ];
+App.Context.showNavbar = false;
+App.Context.footerNavbar = false;
+
+App.APPS = [ App.Apps.home, App.Apps.hp12c, App.Apps.help, App.Apps.maps ];
 
 
 /**
@@ -34,11 +36,14 @@ App.Router.map(function() {
 		});
 	});
 
+	
 	this.resource('help', function() {
 	});
 	this.resource('_home', function() {
 	});
 	this.resource('hp12c', function() {
+	});
+	this.resource('maps', function() {
 	});
 
 });

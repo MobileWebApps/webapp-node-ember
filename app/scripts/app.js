@@ -2,6 +2,11 @@ require('scripts/platform/*');
 require('scripts/platform/model/*');
 
 /**
+ * Creates a namespace for components
+ */
+App.components = {};
+
+/**
  * Setup apps, themes and application context
  */
 require('scripts/app-config'); 
