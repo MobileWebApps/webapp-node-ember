@@ -35,6 +35,8 @@ App.Router.map(function() {
 App.ApplicationRoute = Ember.Route.extend({
 	setupController : function(controller) {
 		controller.set('context', App.context);
+		controller.set('sideMenuLinks', App.sideMenulinks);
+		
 	},
 	
 	renderTemplate : App.context.current_theme.renderTemplate
@@ -56,7 +58,7 @@ App.IndexRoute = Ember.Route.extend({
  * App redirector route
  *  - selects an app and redirects to its route
  */
-App.appsGoRoute = Ember.Route.extend({
+App.AppsGoRoute = Ember.Route.extend({
 	model : function(params) {
 		App.context.setCurrentApp(App.appsById[params.app_id]);
 		return App.context.current_app;

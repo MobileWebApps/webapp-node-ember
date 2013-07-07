@@ -26,3 +26,11 @@ App.context.setCurrentApp(App.context.default_app);
 App.context.default_theme = App.themes.iphoneBlack;
 App.context.current_theme = App.context.default_theme;
 
+App.sideMenulinks = [];
+
+App.sideMenulinks.push(App.Link.create({
+	showLink : true,
+	linkText : 'home',
+	iconName : 'icon-layout',
+	linkToRouteContext: ['apps.go', App.context.default_app]
+}));
