@@ -1,31 +1,13 @@
-﻿<aside id="side-menu" role="navigation" class="well span4 oc">
-	<!--Sidebar content-->
-
+<aside id="side-menu" role="navigation" class="well span4 oc">
 	<ul class="nav nav-list">
-
-		<li class="navigation page">
-			{{#linkTo apps.go App.context.default_app}}
-			<i class="icon-layout"></i><i class="icon-right-open"></i> {{App.context.default_app.name}}</a>
-			{{/linkTo}}
-		</li>
-		<li class="list page">
-			{{#linkTo apps.go App.context.default_app}}
-			<i class="icon-list"></i><i class="icon-right-open"></i> List</a>
-			{{/linkTo}}
-		</li>
-		<li class="elements page">
-			<a href="javascript:void(0)"><i class="icon-info-circled"></i><i class="icon-right-open"></i> Elements</a>
-		</li>
-		<li class="settings">
-			<a href="javascript:void(0)"><i class="icon-cog"></i><i class="icon-right-open"></i> Settings</a>
-		</li>
-		<li class="help">
-			{{#linkTo apps.go App.apps.help}}
-			<i class="icon-help"></i><i class="icon-right-open"></i> {{App.apps.help.name}}</a>
-			{{/linkTo}}
-		</li>
-		<li class="logout">
-			<a href="javascript:void(0);" id="btn-logout"><i class="icon-ccw"></i>Logout</a>
-		</li>
+		{{#each link in sideMenuLinks}}
+			{{#if link.showLink}}
+				<li class="navigation page">
+					{{#linkTo apps.go link.linkToRouteContext}}
+						{{{link.iconTag}}}<i class="icon-right-open"></i>{{link.linkText}}</a>
+					{{/linkTo}}
+				</li>
+			{{/if}}
+		{{/each}}
 	</ul>
 </aside>

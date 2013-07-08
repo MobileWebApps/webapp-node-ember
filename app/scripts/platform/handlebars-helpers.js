@@ -1,23 +1,30 @@
 require('scripts/platform/ember-env');
 
+Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+	if (v1 === v2) {
+		return options.fn(this);
+	}
+	return options.inverse(this);
+});
 
 Ember.Handlebars.registerBoundHelper('listLink', function(link) {
 	text = Handlebars.Utils.escapeExpression(text);
 	url = Handlebars.Utils.escapeExpression(url);
-	
+
 	var className = link.get('cssClassName');
 	var result = '<li';
 	if (!Ember.isEmpty(className)) {
 		result += ' class="' + className + '">';
 	}
-	//result += Ember.Handlebars.helpers.linkTo.apply(this, link.get('linkToRouteContext'));
+	// result += Ember.Handlebars.helpers.linkTo.apply(this,
+	// link.get('linkToRouteContext'));
 	result += '<i class="' + link.get('iconName') + '"></i>';
 	result += link.get('linkText') + '</a>';
-	result +='</li>'; 
+	result += '</li>';
 
 	return new Handlebars.SafeString(result);
 });
-	
+
 Handlebars.registerHelper('eachInMap', function(context, options) {
 	console.log(context);
 	var ret = "";

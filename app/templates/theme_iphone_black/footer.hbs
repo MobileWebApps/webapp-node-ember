@@ -5,6 +5,15 @@
 			<div class="container">
 				<div class="row-fluid">
 					<ul>
+						{{#each link in footerToolbarlinks}}
+							{{#if link.showLink}}
+								<li data-id="{{link.linkText}}">
+									{{#linkTo apps.go link.linkToRouteContext}}
+										{{{link.iconTag}}}{{link.linkText}}</a>
+									{{/linkTo}}
+								</li>
+							{{/if}}
+						{{/each}}
 						<li data-id="1">
 							<a href="javascript:void(0)"><i class="icon-direction"></i> Direction</a>
 						</li>

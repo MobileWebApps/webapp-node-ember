@@ -3,7 +3,7 @@ App.apps.home = App.App.create({
 	id : '_home',
 	name : 'Home',
 	listInHomeApp : false,
-	showNavbar : false
+	showNavbar : true
 });
 App.apps.home.register();
 

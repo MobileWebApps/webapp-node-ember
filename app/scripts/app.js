@@ -5,6 +5,8 @@ require('scripts/platform/model/*');
  * Setup apps, themes and application context
  */
 require('scripts/app-config'); 
+require('scripts/app-menus');
+require('scripts/app-toolbars');
 
 /**
  * Router Map
@@ -36,6 +38,7 @@ App.ApplicationRoute = Ember.Route.extend({
 	setupController : function(controller) {
 		controller.set('context', App.context);
 		controller.set('sideMenuLinks', App.sideMenulinks);
+		controller.set('footerToolbarlinks', App.footerToolbarlinks);
 		
 	},
 	
