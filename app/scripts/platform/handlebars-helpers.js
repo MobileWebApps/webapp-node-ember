@@ -1,23 +1,23 @@
 require('scripts/platform/ember-env');
 
 
-Handlebars.registerHelper('listLink', function(link) {
+Ember.Handlebars.registerBoundHelper('listLink', function(link) {
 	text = Handlebars.Utils.escapeExpression(text);
 	url = Handlebars.Utils.escapeExpression(url);
 	
-	var className = link.get('cssClassName')
+	var className = link.get('cssClassName');
 	var result = '<li';
-	if (!Ember.isEmpty(className) {
-		var result += ' class="' + className + '">';
+	if (!Ember.isEmpty(className)) {
+		result += ' class="' + className + '">';
 	}
-	var result += Ember.Handlebars.helpers.linkTo.apply(this, link.get('linkToRouteContext'));
-	var result += '<i class="' + link.get('iconName') + '"></i>';
-	var result += link.get('linkText') + '</a>';
-	var result +='</li>'; 
+	//result += Ember.Handlebars.helpers.linkTo.apply(this, link.get('linkToRouteContext'));
+	result += '<i class="' + link.get('iconName') + '"></i>';
+	result += link.get('linkText') + '</a>';
+	result +='</li>'; 
 
 	return new Handlebars.SafeString(result);
 });
-
+	
 Handlebars.registerHelper('eachInMap', function(context, options) {
 	console.log(context);
 	var ret = "";

@@ -78,6 +78,7 @@ You will need to have Node.js and Grunt installed
 	
 	# Use node.js npm package installer to install Grunt CLI
 	$ npm install -g grunt-cli
+	$ npm install -g bower
 	
 	# Go to the webapp-node-ember directory and use npm and bower to install all dependencies
 	$ npm install
