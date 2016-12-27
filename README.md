@@ -59,7 +59,7 @@ https://build.phonegap.com/apps/396322/share
 - [UglifyJS](http://badassjs.com/post/971960912/uglifyjs-a-fast-new-javascript-compressor-for-node-js) - a fast new JavaScript compressor for Node.js that’s on par with Closure
 - [cssmin](https://code.google.com/p/cssmin)		- a (simple) css minifier with benefits 
 - [JSHint](http://www.jshint.com/)			- JSHint is a tool to detect errors and potential problems in JavaScript code and can be used to enforce coding conventions
-- [Mocha](http://visionmedia.github.io/mocha)		- the fun, simple, flexible JavaScript test framework
+- [Mocha](http://mochajs.org/)		- the fun, simple, flexible JavaScript test framework
 - [Google Octane](https://developers.google.com/octane)	- a modern benchmark that measures a JavaScript engine’s performance by running a suite of tests representative of today’s complex and demanding web applications
 
 Quick Start
